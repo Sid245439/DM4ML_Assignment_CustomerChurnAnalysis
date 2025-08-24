@@ -1,0 +1,74 @@
+2025-08-24 09:24:22,790 - modeling - INFO - Loading training data from data/database/telco_churn.db
+2025-08-24 09:24:22,810 - modeling - ERROR - Error loading training data: Execution failed on sql 'SELECT SeniorCitizen, tenure, MonthlyCharges, TotalCharges, Churn, gender_Male, Partner_No, Dependents_Yes, PhoneService_Yes, PaperlessBilling_No, MultipleLines_No phone service, MultipleLines_Yes, InternetService_Fiber optic, InternetService_No, OnlineSecurity_No internet service, OnlineSecurity_Yes, OnlineBackup_No internet service, OnlineBackup_Yes, DeviceProtection_No internet service, DeviceProtection_Yes, TechSupport_No internet service, TechSupport_Yes, StreamingTV_No internet service, StreamingTV_Yes, StreamingMovies_No internet service, StreamingMovies_Yes, Contract_One year, Contract_Two year, PaymentMethod_Credit card (automatic), PaymentMethod_Electronic check, PaymentMethod_Mailed check, num_services, customer_value, avg_monthly_spend, service_to_cost_ratio, Contract_One year_x_MonthlyCharges, Contract_Two year_x_MonthlyCharges, is_new_customer, has_premium_service, has_security_service FROM transformed_data': near "service": syntax error
+2025-08-24 09:25:27,373 - modeling - INFO - Loading training data from data/clean/telco_churn_clean.csv
+2025-08-24 09:25:27,423 - modeling - INFO - Successfully loaded 7043 rows and 31 columns
+2025-08-24 09:25:27,423 - modeling - INFO - Splitting data into training and testing sets (test_size=0.2)
+2025-08-24 09:25:27,439 - modeling - INFO - Training set: 5634 samples, Testing set: 1409 samples
+2025-08-24 09:25:27,439 - modeling - INFO - Training logistic regression model
+2025-08-24 09:25:34,591 - modeling - INFO - Best logistic regression parameters: {'C': 10, 'max_iter': 200, 'penalty': 'l2', 'solver': 'saga'}
+2025-08-24 09:25:34,592 - modeling - INFO - Training random forest model
+2025-08-24 09:25:43,000 - modeling - INFO - Best random forest parameters: {'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 50}
+2025-08-24 09:25:43,000 - modeling - INFO - Training gradient boosting model
+2025-08-24 09:25:56,706 - modeling - INFO - Best gradient boosting parameters: {'learning_rate': 0.1, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.8}
+2025-08-24 09:25:56,706 - modeling - INFO - Evaluating Logistic Regression model
+2025-08-24 09:25:56,730 - modeling - INFO - Logistic Regression performance:
+2025-08-24 09:25:56,731 - modeling - INFO -   Accuracy: 0.8048
+2025-08-24 09:25:56,731 - modeling - INFO -   Precision: 0.6552
+2025-08-24 09:25:56,731 - modeling - INFO -   Recall: 0.5588
+2025-08-24 09:25:56,731 - modeling - INFO -   F1 Score: 0.6032
+2025-08-24 09:25:56,731 - modeling - INFO -   ROC AUC: 0.8412
+2025-08-24 09:25:56,737 - modeling - INFO - Evaluating Random Forest model
+2025-08-24 09:25:56,786 - modeling - INFO - Random Forest performance:
+2025-08-24 09:25:56,786 - modeling - INFO -   Accuracy: 0.8013
+2025-08-24 09:25:56,787 - modeling - INFO -   Precision: 0.6599
+2025-08-24 09:25:56,787 - modeling - INFO -   Recall: 0.5187
+2025-08-24 09:25:56,787 - modeling - INFO -   F1 Score: 0.5808
+2025-08-24 09:25:56,787 - modeling - INFO -   ROC AUC: 0.8398
+2025-08-24 09:25:56,803 - modeling - INFO - Evaluating Gradient Boosting model
+2025-08-24 09:25:56,833 - modeling - INFO - Gradient Boosting performance:
+2025-08-24 09:25:56,833 - modeling - INFO -   Accuracy: 0.8027
+2025-08-24 09:25:56,833 - modeling - INFO -   Precision: 0.6667
+2025-08-24 09:25:56,833 - modeling - INFO -   Recall: 0.5134
+2025-08-24 09:25:56,833 - modeling - INFO -   F1 Score: 0.5801
+2025-08-24 09:25:56,833 - modeling - INFO -   ROC AUC: 0.8453
+2025-08-24 09:25:56,840 - modeling - INFO - Plotting model performance
+2025-08-24 09:25:58,302 - modeling - INFO - Performance plots saved to data/models/plots
+2025-08-24 09:25:58,302 - modeling - INFO - Saving Logistic Regression model
+2025-08-24 09:25:58,310 - modeling - INFO - Model saved to data/models/logistic_regression_20250824_092558.pkl
+2025-08-24 09:25:58,310 - modeling - INFO - Model metadata saved to data/models/logistic_regression_20250824_092558_metadata.json
+2025-08-24 09:28:09,212 - modeling - INFO - Loading training data from data/clean/telco_churn_clean.csv
+2025-08-24 09:28:09,245 - modeling - INFO - Successfully loaded 7043 rows and 31 columns
+2025-08-24 09:28:09,245 - modeling - INFO - Splitting data into training and testing sets (test_size=0.2)
+2025-08-24 09:28:09,255 - modeling - INFO - Training set: 5634 samples, Testing set: 1409 samples
+2025-08-24 09:28:09,255 - modeling - INFO - Training logistic regression model
+2025-08-24 09:28:15,418 - modeling - INFO - Best logistic regression parameters: {'C': 10, 'max_iter': 200, 'penalty': 'l2', 'solver': 'saga'}
+2025-08-24 09:28:15,418 - modeling - INFO - Training random forest model
+2025-08-24 09:28:23,025 - modeling - INFO - Best random forest parameters: {'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 50}
+2025-08-24 09:28:23,026 - modeling - INFO - Training gradient boosting model
+2025-08-24 09:28:32,344 - modeling - INFO - Best gradient boosting parameters: {'learning_rate': 0.1, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.8}
+2025-08-24 09:28:32,344 - modeling - INFO - Evaluating Logistic Regression model
+2025-08-24 09:28:32,366 - modeling - INFO - Logistic Regression performance:
+2025-08-24 09:28:32,366 - modeling - INFO -   Accuracy: 0.8048
+2025-08-24 09:28:32,366 - modeling - INFO -   Precision: 0.6552
+2025-08-24 09:28:32,367 - modeling - INFO -   Recall: 0.5588
+2025-08-24 09:28:32,367 - modeling - INFO -   F1 Score: 0.6032
+2025-08-24 09:28:32,367 - modeling - INFO -   ROC AUC: 0.8412
+2025-08-24 09:28:32,370 - modeling - INFO - Evaluating Random Forest model
+2025-08-24 09:28:32,410 - modeling - INFO - Random Forest performance:
+2025-08-24 09:28:32,410 - modeling - INFO -   Accuracy: 0.8013
+2025-08-24 09:28:32,410 - modeling - INFO -   Precision: 0.6599
+2025-08-24 09:28:32,410 - modeling - INFO -   Recall: 0.5187
+2025-08-24 09:28:32,410 - modeling - INFO -   F1 Score: 0.5808
+2025-08-24 09:28:32,410 - modeling - INFO -   ROC AUC: 0.8398
+2025-08-24 09:28:32,423 - modeling - INFO - Evaluating Gradient Boosting model
+2025-08-24 09:28:32,446 - modeling - INFO - Gradient Boosting performance:
+2025-08-24 09:28:32,447 - modeling - INFO -   Accuracy: 0.8027
+2025-08-24 09:28:32,447 - modeling - INFO -   Precision: 0.6667
+2025-08-24 09:28:32,447 - modeling - INFO -   Recall: 0.5134
+2025-08-24 09:28:32,447 - modeling - INFO -   F1 Score: 0.5801
+2025-08-24 09:28:32,447 - modeling - INFO -   ROC AUC: 0.8453
+2025-08-24 09:28:32,452 - modeling - INFO - Plotting model performance
+2025-08-24 09:28:33,813 - modeling - INFO - Performance plots saved to data/models/plots
+2025-08-24 09:28:33,813 - modeling - INFO - Saving Logistic Regression model
+2025-08-24 09:28:33,820 - modeling - INFO - Model saved to data/models/logistic_regression_20250824_092833.pkl
+2025-08-24 09:28:33,820 - modeling - INFO - Model metadata saved to data/models/logistic_regression_20250824_092833_metadata.json

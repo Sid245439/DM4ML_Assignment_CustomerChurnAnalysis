@@ -1,0 +1,41 @@
+2025-08-24 07:50:18,841 - validation - INFO - Running all validation checks for telco_churn
+2025-08-24 07:50:18,841 - validation - INFO - Checking for missing values in telco_churn
+2025-08-24 07:50:18,844 - validation - INFO - ✅ No missing values found
+2025-08-24 07:50:18,845 - validation - INFO - Checking for duplicates on columns: ['customerID']
+2025-08-24 07:50:18,850 - validation - INFO - ✅ No duplicates found on ['customerID']
+2025-08-24 07:50:18,850 - validation - INFO - Checking data types
+2025-08-24 07:50:18,850 - validation - INFO - ✅ All data types match expected types
+2025-08-24 07:50:18,850 - validation - INFO - Checking value ranges
+2025-08-24 07:50:18,853 - validation - WARNING - Column 'MonthlyCharges' specified in range check but not found in dataset
+2025-08-24 07:50:18,853 - validation - INFO - ✅ All values are within expected ranges
+2025-08-24 07:50:18,853 - validation - INFO - Checking categorical values
+2025-08-24 07:50:18,854 - validation - INFO - ✅ All categorical values are within allowed values
+2025-08-24 07:50:18,854 - validation - INFO - ✅ Validation PASSED for telco_churn
+2025-08-24 07:52:38,802 - validation - INFO - Running all validation checks for telco_churn
+2025-08-24 07:52:38,802 - validation - INFO - Checking for missing values in telco_churn
+2025-08-24 07:52:38,806 - validation - INFO - ✅ No missing values found
+2025-08-24 07:52:38,806 - validation - INFO - Checking for duplicates on columns: ['customerID']
+2025-08-24 07:52:38,813 - validation - INFO - ✅ No duplicates found on ['customerID']
+2025-08-24 07:52:38,813 - validation - INFO - Checking data types
+2025-08-24 07:52:38,813 - validation - INFO - ✅ All data types match expected types
+2025-08-24 07:52:38,814 - validation - INFO - Checking value ranges
+2025-08-24 07:52:38,816 - validation - WARNING - Column 'MonthlyCharges' specified in range check but not found in dataset
+2025-08-24 07:52:38,817 - validation - INFO - ✅ All values are within expected ranges
+2025-08-24 07:52:38,817 - validation - INFO - Checking categorical values
+2025-08-24 07:52:38,817 - validation - INFO - ✅ All categorical values are within allowed values
+2025-08-24 07:52:38,818 - validation - INFO - ✅ Validation PASSED for telco_churn
+2025-08-24 07:52:38,818 - validation - INFO - Validation report saved to data/validation_reports/telco_churn_validation_20250824_075238.json
+2025-08-24 12:37:49,594 - validation - INFO - Running all validation checks for telco_churn
+2025-08-24 12:37:49,594 - validation - INFO - Checking for missing values in telco_churn
+2025-08-24 12:37:49,598 - validation - INFO - ✅ No missing values found
+2025-08-24 12:37:49,598 - validation - INFO - Checking for duplicates on columns: ['customerID']
+2025-08-24 12:37:49,599 - validation - INFO - ✅ No duplicates found on ['customerID']
+2025-08-24 12:37:49,599 - validation - INFO - Checking data types
+2025-08-24 12:37:49,600 - validation - INFO - ✅ All data types match expected types
+2025-08-24 12:37:49,600 - validation - INFO - Checking value ranges
+2025-08-24 12:37:49,602 - validation - WARNING - Column 'MonthlyCharges' specified in range check but not found in dataset
+2025-08-24 12:37:49,602 - validation - INFO - ✅ All values are within expected ranges
+2025-08-24 12:37:49,602 - validation - INFO - Checking categorical values
+2025-08-24 12:37:49,603 - validation - INFO - ✅ All categorical values are within allowed values
+2025-08-24 12:37:49,603 - validation - INFO - ✅ Validation PASSED for telco_churn
+2025-08-24 12:37:49,604 - validation - INFO - Validation report saved to data/validation_reports/telco_churn_validation_20250824_123749.json

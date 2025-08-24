@@ -1,0 +1,64 @@
+2025-08-24 09:18:58,573 - feature_store - INFO - No existing metadata found, initializing new metadata
+2025-08-24 09:18:58,573 - feature_store - INFO - Feature store initialized with database at data/database/telco_churn.db and metadata at data/feature_store/metadata.json
+2025-08-24 09:18:58,573 - feature_store - INFO - Saved metadata for 1 features
+2025-08-24 09:18:58,573 - feature_store - INFO - Registered feature 'SeniorCitizen' with metadata
+2025-08-24 09:18:58,574 - feature_store - INFO - Saved metadata for 2 features
+2025-08-24 09:18:58,574 - feature_store - INFO - Registered feature 'tenure' with metadata
+2025-08-24 09:18:58,574 - feature_store - INFO - Saved metadata for 3 features
+2025-08-24 09:18:58,574 - feature_store - INFO - Registered feature 'MonthlyCharges' with metadata
+2025-08-24 09:18:58,575 - feature_store - INFO - Saved metadata for 4 features
+2025-08-24 09:18:58,575 - feature_store - INFO - Registered feature 'TotalCharges' with metadata
+2025-08-24 09:18:58,575 - feature_store - INFO - Saved metadata for 5 features
+2025-08-24 09:18:58,576 - feature_store - INFO - Registered feature 'gender_Male' with metadata
+2025-08-24 09:18:58,576 - feature_store - INFO - Saved metadata for 6 features
+2025-08-24 09:18:58,576 - feature_store - INFO - Registered feature 'Partner_No' with metadata
+2025-08-24 09:18:58,577 - feature_store - INFO - Saved metadata for 7 features
+2025-08-24 09:18:58,577 - feature_store - INFO - Registered feature 'num_services' with metadata
+2025-08-24 09:18:58,577 - feature_store - INFO - Saved metadata for 8 features
+2025-08-24 09:18:58,578 - feature_store - INFO - Registered feature 'customer_value' with metadata
+2025-08-24 09:18:58,578 - feature_store - INFO - Saved metadata for 9 features
+2025-08-24 09:18:58,578 - feature_store - INFO - Registered feature 'avg_monthly_spend' with metadata
+2025-08-24 09:18:58,579 - feature_store - INFO - Saved metadata for 10 features
+2025-08-24 09:18:58,579 - feature_store - INFO - Registered feature 'service_to_cost_ratio' with metadata
+2025-08-24 09:18:58,580 - feature_store - INFO - Saved metadata for 11 features
+2025-08-24 09:18:58,580 - feature_store - INFO - Registered feature 'is_new_customer' with metadata
+2025-08-24 09:18:58,581 - feature_store - INFO - Saved metadata for 12 features
+2025-08-24 09:18:58,581 - feature_store - INFO - Registered feature 'has_premium_service' with metadata
+2025-08-24 09:18:58,582 - feature_store - INFO - Saved metadata for 13 features
+2025-08-24 09:18:58,582 - feature_store - INFO - Registered feature 'has_security_service' with metadata
+2025-08-24 09:18:58,583 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:18:58,583 - feature_store - INFO - Registered feature 'Churn' with metadata
+2025-08-24 09:18:58,584 - feature_store - INFO - Batch registered 14 features
+2025-08-24 09:18:58,616 - feature_store - INFO - Retrieved training data with 7043 rows and 6 columns
+2025-08-24 09:28:04,496 - feature_store - INFO - Loaded metadata for 14 features
+2025-08-24 09:28:04,497 - feature_store - INFO - Feature store initialized with database at data/database/telco_churn.db and metadata at data/feature_store/metadata.json
+2025-08-24 09:28:04,497 - feature_store - WARNING - Feature 'SeniorCitizen' already exists. Updating metadata.
+2025-08-24 09:28:04,498 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:28:04,498 - feature_store - WARNING - Feature 'tenure' already exists. Updating metadata.
+2025-08-24 09:28:04,498 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:28:04,499 - feature_store - WARNING - Feature 'MonthlyCharges' already exists. Updating metadata.
+2025-08-24 09:28:04,499 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:28:04,499 - feature_store - WARNING - Feature 'TotalCharges' already exists. Updating metadata.
+2025-08-24 09:28:04,500 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:28:04,500 - feature_store - WARNING - Feature 'gender_Male' already exists. Updating metadata.
+2025-08-24 09:28:04,501 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:28:04,501 - feature_store - WARNING - Feature 'Partner_No' already exists. Updating metadata.
+2025-08-24 09:28:04,502 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:28:04,502 - feature_store - WARNING - Feature 'num_services' already exists. Updating metadata.
+2025-08-24 09:28:04,503 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:28:04,503 - feature_store - WARNING - Feature 'customer_value' already exists. Updating metadata.
+2025-08-24 09:28:04,503 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:28:04,503 - feature_store - WARNING - Feature 'avg_monthly_spend' already exists. Updating metadata.
+2025-08-24 09:28:04,504 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:28:04,504 - feature_store - WARNING - Feature 'service_to_cost_ratio' already exists. Updating metadata.
+2025-08-24 09:28:04,505 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:28:04,505 - feature_store - WARNING - Feature 'is_new_customer' already exists. Updating metadata.
+2025-08-24 09:28:04,506 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:28:04,506 - feature_store - WARNING - Feature 'has_premium_service' already exists. Updating metadata.
+2025-08-24 09:28:04,506 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:28:04,506 - feature_store - WARNING - Feature 'has_security_service' already exists. Updating metadata.
+2025-08-24 09:28:04,507 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:28:04,508 - feature_store - WARNING - Feature 'Churn' already exists. Updating metadata.
+2025-08-24 09:28:04,508 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:28:04,508 - feature_store - INFO - Batch registered 14 features
+2025-08-24 09:28:04,530 - feature_store - INFO - Retrieved training data with 7043 rows and 6 columns

@@ -1,0 +1,472 @@
+2025-08-24 09:27:50,083 - orchestration - INFO - Executing pipeline: Customer Churn Prediction
+2025-08-24 09:27:50,083 - orchestration - INFO - Execution order: ['data_preparation', 'feature_engineering', 'feature_store', 'data_versioning', 'model_training']
+2025-08-24 09:27:50,083 - orchestration - INFO - Executing step: data_preparation
+2025-08-24 09:28:02,544 - orchestration - INFO - Output from data_preparation:
+
+======================================================================
+DATA PREPARATION PIPELINE
+======================================================================
+
+Available data files:
+1. data/raw/WA_Fn-UseC_-Telco-Customer-Churn.csv
+2. data/raw/kaggle/WA_Fn-UseC_-Telco-Customer-Churn.csv
+3. data/raw/telco_churn_by_churn/Churn=No/telco_churn_by_churn_20250823_211907.csv
+4. data/raw/telco_churn_by_churn/Churn=Yes/telco_churn_by_churn_20250823_211907.csv
+5. data/raw/telco_churn_by_gender/gender=Male/telco_churn_by_gender_20250823_211907.csv
+6. data/raw/telco_churn_by_gender/gender=Female/telco_churn_by_gender_20250823_211907.csv
+7. data/raw/telco_churn/telco_churn_20250823_211907.csv
+
+Using Kaggle data: data/raw/kaggle/WA_Fn-UseC_-Telco-Customer-Churn.csv
+
+📊 Loading validated data...
+✅ Loaded data with 7043 rows and 21 columns
+
+📊 HANDLING MISSING VALUES
+--------------------------------------------------
+✅ Missing values handled
+
+📊 STANDARDIZING NUMERICAL FEATURES
+--------------------------------------------------
+✅ Numerical features standardized
+
+📊 ENCODING CATEGORICAL VARIABLES
+--------------------------------------------------
+✅ Categorical variables encoded
+
+📊 PERFORMING EXPLORATORY DATA ANALYSIS
+--------------------------------------------------
+  Generating summary statistics...
+  ✓ Summary statistics completed
+  Generating correlation matrix...
+  ✓ Correlation matrix completed
+  Generating churn distribution...
+  ✓ Churn distribution completed
+  Generating histograms for 30 numerical features...
+    ✓ Histograms 1-3 of 30 completed
+    ✓ Histograms 4-6 of 30 completed
+    ✓ Histograms 7-9 of 30 completed
+    ✓ Histograms 10-12 of 30 completed
+    ✓ Histograms 13-15 of 30 completed
+    ✓ Histograms 16-18 of 30 completed
+    ✓ Histograms 19-21 of 30 completed
+    ✓ Histograms 22-24 of 30 completed
+    ✓ Histograms 25-27 of 30 completed
+    ✓ Histograms 28-30 of 30 completed
+✅ EDA completed and visualizations saved
+
+📊 SAVING CLEANED DATA
+--------------------------------------------------
+✅ Cleaned data saved to data/clean/telco_churn_clean.csv
+
+==================================================
+DATA PREPARATION SUMMARY
+==================================================
+Input data: data/raw/kaggle/WA_Fn-UseC_-Telco-Customer-Churn.csv
+Output data: data/clean/telco_churn_clean.csv
+Final data shape: 7043 rows and 32 columns
+
+🚀 Data preparation pipeline completed successfully!
+
+2025-08-24 09:28:02,545 - orchestration - WARNING - Errors/warnings from data_preparation:
+2025-08-24 09:27:53,632 - preparation - INFO - Listing available files in data/raw
+2025-08-24 09:27:53,633 - preparation - INFO - Found 7 CSV files
+2025-08-24 09:27:53,634 - preparation - INFO - Loading validated data from data/raw/kaggle/WA_Fn-UseC_-Telco-Customer-Churn.csv
+2025-08-24 09:27:53,667 - preparation - INFO - Original column data types:
+2025-08-24 09:27:53,668 - preparation - INFO -   customerID: object
+2025-08-24 09:27:53,668 - preparation - INFO -   gender: object
+2025-08-24 09:27:53,668 - preparation - INFO -   SeniorCitizen: int64
+2025-08-24 09:27:53,668 - preparation - INFO -   Partner: object
+2025-08-24 09:27:53,668 - preparation - INFO -   Dependents: object
+2025-08-24 09:27:53,668 - preparation - INFO -   tenure: int64
+2025-08-24 09:27:53,668 - preparation - INFO -   PhoneService: object
+2025-08-24 09:27:53,668 - preparation - INFO -   MultipleLines: object
+2025-08-24 09:27:53,668 - preparation - INFO -   InternetService: object
+2025-08-24 09:27:53,669 - preparation - INFO -   OnlineSecurity: object
+2025-08-24 09:27:53,669 - preparation - INFO -   OnlineBackup: object
+2025-08-24 09:27:53,669 - preparation - INFO -   DeviceProtection: object
+2025-08-24 09:27:53,669 - preparation - INFO -   TechSupport: object
+2025-08-24 09:27:53,669 - preparation - INFO -   StreamingTV: object
+2025-08-24 09:27:53,669 - preparation - INFO -   StreamingMovies: object
+2025-08-24 09:27:53,669 - preparation - INFO -   Contract: object
+2025-08-24 09:27:53,669 - preparation - INFO -   PaperlessBilling: object
+2025-08-24 09:27:53,669 - preparation - INFO -   PaymentMethod: object
+2025-08-24 09:27:53,670 - preparation - INFO -   MonthlyCharges: float64
+2025-08-24 09:27:53,671 - preparation - INFO -   TotalCharges: object
+2025-08-24 09:27:53,671 - preparation - INFO -   Churn: object
+2025-08-24 09:27:53,678 - preparation - INFO - Converted TotalCharges from object to numeric type
+/Users/SSatap/Documents/Personal/MTECH/Semester 2/DMML/Assignment/DM4ML_Assignment_CustomerChurnAnalysis/src/preparation/data_preparation.py:80: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  df[col].fillna(median_value, inplace=True)
+2025-08-24 09:27:53,682 - preparation - INFO - Filled 11 missing values in TotalCharges with median: 1397.475
+2025-08-24 09:27:53,686 - preparation - INFO - Converted Churn from Yes/No to 1/0
+2025-08-24 09:27:53,687 - preparation - INFO - Updated column data types:
+2025-08-24 09:27:53,687 - preparation - INFO -   customerID: object
+2025-08-24 09:27:53,687 - preparation - INFO -   gender: object
+2025-08-24 09:27:53,687 - preparation - INFO -   SeniorCitizen: int64
+2025-08-24 09:27:53,687 - preparation - INFO -   Partner: object
+2025-08-24 09:27:53,687 - preparation - INFO -   Dependents: object
+2025-08-24 09:27:53,687 - preparation - INFO -   tenure: int64
+2025-08-24 09:27:53,687 - preparation - INFO -   PhoneService: object
+2025-08-24 09:27:53,688 - preparation - INFO -   MultipleLines: object
+2025-08-24 09:27:53,688 - preparation - INFO -   InternetService: object
+2025-08-24 09:27:53,688 - preparation - INFO -   OnlineSecurity: object
+2025-08-24 09:27:53,688 - preparation - INFO -   OnlineBackup: object
+2025-08-24 09:27:53,688 - preparation - INFO -   DeviceProtection: object
+2025-08-24 09:27:53,688 - preparation - INFO -   TechSupport: object
+2025-08-24 09:27:53,688 - preparation - INFO -   StreamingTV: object
+2025-08-24 09:27:53,688 - preparation - INFO -   StreamingMovies: object
+2025-08-24 09:27:53,688 - preparation - INFO -   Contract: object
+2025-08-24 09:27:53,688 - preparation - INFO -   PaperlessBilling: object
+2025-08-24 09:27:53,688 - preparation - INFO -   PaymentMethod: object
+2025-08-24 09:27:53,689 - preparation - INFO -   MonthlyCharges: float64
+2025-08-24 09:27:53,689 - preparation - INFO -   TotalCharges: float64
+2025-08-24 09:27:53,689 - preparation - INFO -   Churn: int64
+2025-08-24 09:27:53,689 - preparation - INFO - Successfully loaded and processed data with 7043 rows and 21 columns
+2025-08-24 09:27:53,689 - preparation - INFO - Handling missing values
+2025-08-24 09:27:53,695 - preparation - INFO - No missing values found
+2025-08-24 09:27:53,695 - preparation - INFO - Standardizing numerical features
+2025-08-24 09:27:53,696 - preparation - INFO - Standardizing columns: ['SeniorCitizen', 'tenure', 'MonthlyCharges', 'TotalCharges']
+2025-08-24 09:27:53,705 - preparation - INFO - Scaler saved to models/scaler.pkl
+2025-08-24 09:27:53,705 - preparation - INFO - Encoding categorical variables
+2025-08-24 09:27:53,706 - preparation - INFO - Encoding columns: ['gender', 'Partner', 'Dependents', 'PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod']
+2025-08-24 09:27:53,711 - preparation - INFO - Binary encoded gender to gender_Male: 1=Male, 0=Female
+2025-08-24 09:27:53,715 - preparation - INFO - Binary encoded Partner to Partner_No: 1=No, 0=Yes
+2025-08-24 09:27:53,718 - preparation - INFO - Binary encoded Dependents to Dependents_Yes: 1=Yes, 0=No
+2025-08-24 09:27:53,722 - preparation - INFO - Binary encoded PhoneService to PhoneService_Yes: 1=Yes, 0=No
+2025-08-24 09:27:53,729 - preparation - INFO - Binary encoded PaperlessBilling to PaperlessBilling_No: 1=No, 0=Yes
+2025-08-24 09:27:53,769 - preparation - INFO - Encoder saved to models/encoder.pkl
+2025-08-24 09:27:53,769 - preparation - INFO - Encoding dictionary saved to models/encoding_dict.json
+2025-08-24 09:27:53,769 - preparation - INFO - One-hot encoded 10 categorical columns
+2025-08-24 09:27:53,769 - preparation - INFO - Performing exploratory data analysis
+2025-08-24 09:27:53,822 - preparation - INFO - Summary statistics saved to data/eda/summary_statistics.csv
+2025-08-24 09:27:55,856 - preparation - INFO - Correlation matrix saved to data/eda/correlation_matrix.png
+2025-08-24 09:27:55,892 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-08-24 09:27:55,901 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-08-24 09:27:55,988 - preparation - INFO - Churn distribution saved to data/eda/churn_distribution.png
+2025-08-24 09:28:01,647 - preparation - INFO - Numerical feature distributions saved to data/eda
+2025-08-24 09:28:01,647 - preparation - INFO - Exploratory data analysis completed
+2025-08-24 09:28:01,648 - preparation - INFO - Saving cleaned data to data/clean/telco_churn_clean.csv
+2025-08-24 09:28:01,889 - preparation - INFO - Successfully saved cleaned data with 7043 rows and 32 columns
+
+2025-08-24 09:28:02,546 - orchestration - INFO - Step data_preparation completed successfully
+2025-08-24 09:28:02,546 - orchestration - INFO - Step data_preparation took 12.46 seconds
+2025-08-24 09:28:02,546 - orchestration - INFO - Executing step: feature_engineering
+2025-08-24 09:28:03,791 - orchestration - INFO - Output from feature_engineering:
+
+======================================================================
+FEATURE ENGINEERING PIPELINE
+======================================================================
+
+📊 Loading cleaned data...
+✅ Loaded data with 7043 rows and 32 columns
+
+📊 CREATING DERIVED FEATURES
+--------------------------------------------------
+✅ Created 9 new features
+
+📊 CREATING DATABASE CONNECTION
+--------------------------------------------------
+✅ Database connection created at data/database/telco_churn.db
+
+📊 STORING TRANSFORMED DATA
+--------------------------------------------------
+✅ Transformed data stored in database table 'transformed_data'
+
+==================================================
+FEATURE ENGINEERING SUMMARY
+==================================================
+Input data: data/clean/telco_churn_clean.csv
+Output database: data/database/telco_churn.db
+Original features: 32
+New features created: 9
+Total features: 41
+
+🚀 Feature engineering pipeline completed successfully!
+
+2025-08-24 09:28:03,791 - orchestration - WARNING - Errors/warnings from feature_engineering:
+2025-08-24 09:28:03,621 - transformation - INFO - Loading cleaned data from data/clean/telco_churn_clean.csv
+2025-08-24 09:28:03,651 - transformation - INFO - Successfully loaded data with 7043 rows and 32 columns
+2025-08-24 09:28:03,651 - transformation - INFO - Creating derived features
+2025-08-24 09:28:03,655 - transformation - INFO - Created 'num_services' feature from 8 service columns
+2025-08-24 09:28:03,656 - transformation - INFO - Created 'customer_value' feature (tenure * MonthlyCharges)
+2025-08-24 09:28:03,657 - transformation - INFO - Created 'avg_monthly_spend' feature (TotalCharges / tenure)
+2025-08-24 09:28:03,657 - transformation - INFO - Created 'service_to_cost_ratio' feature (num_services / MonthlyCharges)
+2025-08-24 09:28:03,658 - transformation - INFO - Created interaction feature 'Contract_One year_x_MonthlyCharges'
+2025-08-24 09:28:03,658 - transformation - INFO - Created interaction feature 'Contract_Two year_x_MonthlyCharges'
+2025-08-24 09:28:03,659 - transformation - INFO - Created 'is_new_customer' flag
+2025-08-24 09:28:03,659 - transformation - INFO - Created 'has_premium_service' flag based on fiber optic service
+2025-08-24 09:28:03,661 - transformation - INFO - Created 'has_security_service' flag from 4 security-related columns
+2025-08-24 09:28:03,661 - transformation - INFO - Created 9 new features
+2025-08-24 09:28:03,661 - transformation - INFO - Creating database connection to data/database/telco_churn.db
+2025-08-24 09:28:03,665 - transformation - INFO - Database connection created successfully
+2025-08-24 09:28:03,665 - transformation - INFO - Storing transformed data in table 'transformed_data'
+2025-08-24 09:28:03,737 - transformation - INFO - Successfully stored 7043 rows and 41 columns in table 'transformed_data'
+
+2025-08-24 09:28:03,791 - orchestration - INFO - Step feature_engineering completed successfully
+2025-08-24 09:28:03,791 - orchestration - INFO - Step feature_engineering took 1.25 seconds
+2025-08-24 09:28:03,792 - orchestration - INFO - Executing step: feature_store
+2025-08-24 09:28:04,578 - orchestration - INFO - Output from feature_store:
+
+======================================================================
+FEATURE STORE SETUP
+======================================================================
+
+📊 Registering features in the feature store...
+Registered 14 features in the feature store
+✅ Registered 14 features in the feature store
+
+📊 FEATURE CATEGORIES
+--------------------------------------------------
+  demographic: 3 features
+  derived: 7 features
+  behavioral: 1 features
+  target: 1 features
+  billing: 2 features
+
+📊 DERIVED FEATURES
+--------------------------------------------------
+  num_services: Number of services the customer has subscribed to
+  customer_value: Customer lifetime value (tenure * MonthlyCharges)
+  avg_monthly_spend: Average monthly spend (TotalCharges / tenure)
+  service_to_cost_ratio: Ratio of services to monthly charges
+  is_new_customer: Flag indicating if the customer is new (low tenure)
+  has_premium_service: Flag indicating if the customer has fiber optic service
+  has_security_service: Flag indicating if the customer has any security service
+
+📊 FEATURE RETRIEVAL DEMONSTRATION
+--------------------------------------------------
+✅ Retrieved training data with 7043 rows and 6 columns
+   Sample features: tenure, MonthlyCharges, num_services, customer_value
+
+==================================================
+FEATURE STORE SUMMARY
+==================================================
+Total features: 14
+Feature categories: demographic, derived, behavioral, target, billing
+Derived features: 7
+
+🚀 Feature store setup completed successfully!
+
+2025-08-24 09:28:04,578 - orchestration - WARNING - Errors/warnings from feature_store:
+2025-08-24 09:28:04,496 - feature_store - INFO - Loaded metadata for 14 features
+2025-08-24 09:28:04,497 - feature_store - INFO - Feature store initialized with database at data/database/telco_churn.db and metadata at data/feature_store/metadata.json
+2025-08-24 09:28:04,497 - feature_store - WARNING - Feature 'SeniorCitizen' already exists. Updating metadata.
+2025-08-24 09:28:04,498 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:28:04,498 - feature_store - WARNING - Feature 'tenure' already exists. Updating metadata.
+2025-08-24 09:28:04,498 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:28:04,499 - feature_store - WARNING - Feature 'MonthlyCharges' already exists. Updating metadata.
+2025-08-24 09:28:04,499 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:28:04,499 - feature_store - WARNING - Feature 'TotalCharges' already exists. Updating metadata.
+2025-08-24 09:28:04,500 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:28:04,500 - feature_store - WARNING - Feature 'gender_Male' already exists. Updating metadata.
+2025-08-24 09:28:04,501 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:28:04,501 - feature_store - WARNING - Feature 'Partner_No' already exists. Updating metadata.
+2025-08-24 09:28:04,502 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:28:04,502 - feature_store - WARNING - Feature 'num_services' already exists. Updating metadata.
+2025-08-24 09:28:04,503 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:28:04,503 - feature_store - WARNING - Feature 'customer_value' already exists. Updating metadata.
+2025-08-24 09:28:04,503 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:28:04,503 - feature_store - WARNING - Feature 'avg_monthly_spend' already exists. Updating metadata.
+2025-08-24 09:28:04,504 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:28:04,504 - feature_store - WARNING - Feature 'service_to_cost_ratio' already exists. Updating metadata.
+2025-08-24 09:28:04,505 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:28:04,505 - feature_store - WARNING - Feature 'is_new_customer' already exists. Updating metadata.
+2025-08-24 09:28:04,506 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:28:04,506 - feature_store - WARNING - Feature 'has_premium_service' already exists. Updating metadata.
+2025-08-24 09:28:04,506 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:28:04,506 - feature_store - WARNING - Feature 'has_security_service' already exists. Updating metadata.
+2025-08-24 09:28:04,507 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:28:04,508 - feature_store - WARNING - Feature 'Churn' already exists. Updating metadata.
+2025-08-24 09:28:04,508 - feature_store - INFO - Saved metadata for 14 features
+2025-08-24 09:28:04,508 - feature_store - INFO - Batch registered 14 features
+2025-08-24 09:28:04,530 - feature_store - INFO - Retrieved training data with 7043 rows and 6 columns
+
+2025-08-24 09:28:04,579 - orchestration - INFO - Step feature_store completed successfully
+2025-08-24 09:28:04,579 - orchestration - INFO - Step feature_store took 0.79 seconds
+2025-08-24 09:28:04,579 - orchestration - INFO - Executing step: data_versioning
+2025-08-24 09:28:05,717 - orchestration - INFO - Output from data_versioning:
+
+======================================================================
+DATA VERSIONING DEMONSTRATION
+======================================================================
+
+📊 Creating snapshots of datasets...
+✅ Created snapshot of raw data with version ID: v_20250824_092805
+✅ Created snapshot of cleaned data with version ID: v_20250824_092805
+✅ Created snapshot of transformed data with version ID: v_20250824_092805
+
+📊 DATASET VERSIONS (6)
+--------------------------------------------------
+  1. v_20250824_092101 - Original raw telco churn dataset [raw, telco, churn]
+  2. v_20250824_092101 - Cleaned telco churn dataset with encoded features [clean, telco, churn, encoded]
+  3. v_20250824_092101 - Transformed telco churn dataset with engineered features [transformed, telco, churn, feature-engineered]
+  4. v_20250824_092805 - Original raw telco churn dataset [raw, telco, churn]
+  5. v_20250824_092805 - Cleaned telco churn dataset with encoded features [clean, telco, churn, encoded]
+  6. v_20250824_092805 - Transformed telco churn dataset with engineered features [transformed, telco, churn, feature-engineered]
+
+📊 COMPARING VERSIONS
+--------------------------------------------------
+  Comparing v_20250824_092101 and v_20250824_092805:
+  - Shape of v_20250824_092101: 100 rows, 5 columns
+  - Shape of v_20250824_092805: 100 rows, 5 columns
+  - Columns added: 0
+  - Columns removed: 0
+  - Common columns: 5
+
+==================================================
+DATA VERSIONING SUMMARY
+==================================================
+Total versions: 6
+Versions directory: data/versions
+Registry path: data/versions/registry.json
+
+🚀 Data versioning demonstration completed successfully!
+
+2025-08-24 09:28:05,718 - orchestration - WARNING - Errors/warnings from data_versioning:
+2025-08-24 09:28:05,279 - versioning - INFO - Loaded registry with 3 dataset versions
+2025-08-24 09:28:05,279 - versioning - INFO - Data versioning system initialized with versions directory at data/versions
+2025-08-24 09:28:05,281 - versioning - INFO - Created snapshot of file data/raw/WA_Fn-UseC_-Telco-Customer-Churn.csv with version ID v_20250824_092805
+2025-08-24 09:28:05,282 - versioning - INFO - Saved registry with 4 dataset versions
+2025-08-24 09:28:05,287 - versioning - INFO - Created snapshot of file data/clean/telco_churn_clean.csv with version ID v_20250824_092805
+2025-08-24 09:28:05,288 - versioning - INFO - Saved registry with 5 dataset versions
+2025-08-24 09:28:05,650 - versioning - INFO - Created snapshot of database table transformed_data with version ID v_20250824_092805
+2025-08-24 09:28:05,651 - versioning - INFO - Saved registry with 6 dataset versions
+2025-08-24 09:28:05,655 - versioning - INFO - Loaded version v_20250824_092101 with 100 rows and 5 columns
+2025-08-24 09:28:05,657 - versioning - INFO - Loaded version v_20250824_092805 with 100 rows and 5 columns
+2025-08-24 09:28:05,665 - versioning - INFO - Compared versions v_20250824_092101 and v_20250824_092805
+
+2025-08-24 09:28:05,718 - orchestration - INFO - Step data_versioning completed successfully
+2025-08-24 09:28:05,718 - orchestration - INFO - Step data_versioning took 1.14 seconds
+2025-08-24 09:28:05,718 - orchestration - INFO - Executing step: model_training
+2025-08-24 09:28:34,721 - orchestration - INFO - Output from model_training:
+
+======================================================================
+MODEL TRAINING PIPELINE
+======================================================================
+
+📊 Loading training data...
+✅ Loaded data with 7043 rows and 31 columns
+
+📊 SPLITTING DATA
+--------------------------------------------------
+✅ Training set: 5634 samples, Testing set: 1409 samples
+
+📊 TRAINING MODELS
+--------------------------------------------------
+🔍 Training Logistic Regression...
+Fitting 5 folds for each of 16 candidates, totalling 80 fits
+✅ Logistic Regression CV Score: 0.5981
+
+🔍 Training Random Forest...
+Fitting 5 folds for each of 24 candidates, totalling 120 fits
+✅ Random Forest CV Score: 0.5734
+
+🔍 Training Gradient Boosting...
+Fitting 5 folds for each of 16 candidates, totalling 80 fits
+✅ Gradient Boosting CV Score: 0.5824
+
+📊 EVALUATING MODELS
+--------------------------------------------------
+🔍 Evaluating Logistic Regression...
+✅ Logistic Regression - Accuracy: 0.8048, F1 Score: 0.6032
+🔍 Evaluating Random Forest...
+✅ Random Forest - Accuracy: 0.8013, F1 Score: 0.5808
+🔍 Evaluating Gradient Boosting...
+✅ Gradient Boosting - Accuracy: 0.8027, F1 Score: 0.5801
+
+📊 PLOTTING MODEL PERFORMANCE
+--------------------------------------------------
+✅ Performance plots saved to data/models/plots
+
+📊 SAVING BEST MODEL
+--------------------------------------------------
+✅ Best model (Logistic Regression) saved to data/models/logistic_regression_20250824_092833.pkl
+
+==================================================
+MODEL TRAINING SUMMARY
+==================================================
+Data size: 7043 rows, 31 columns
+Number of features: 30
+Models trained: 3
+Best model: Logistic Regression (F1 Score: 0.6032)
+
+🚀 Model training pipeline completed successfully!
+
+2025-08-24 09:28:34,722 - orchestration - WARNING - Errors/warnings from model_training:
+2025-08-24 09:28:09,212 - modeling - INFO - Loading training data from data/clean/telco_churn_clean.csv
+2025-08-24 09:28:09,245 - modeling - INFO - Successfully loaded 7043 rows and 31 columns
+2025-08-24 09:28:09,245 - modeling - INFO - Splitting data into training and testing sets (test_size=0.2)
+2025-08-24 09:28:09,255 - modeling - INFO - Training set: 5634 samples, Testing set: 1409 samples
+2025-08-24 09:28:09,255 - modeling - INFO - Training logistic regression model
+/Users/SSatap/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_sag.py:348: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+  warnings.warn(
+/Users/SSatap/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_sag.py:348: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+  warnings.warn(
+/Users/SSatap/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_sag.py:348: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+  warnings.warn(
+/Users/SSatap/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_sag.py:348: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+  warnings.warn(
+/Users/SSatap/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_sag.py:348: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+  warnings.warn(
+/Users/SSatap/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_sag.py:348: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+  warnings.warn(
+/Users/SSatap/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_sag.py:348: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+  warnings.warn(
+/Users/SSatap/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_sag.py:348: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+  warnings.warn(
+/Users/SSatap/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_sag.py:348: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+  warnings.warn(
+/Users/SSatap/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_sag.py:348: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+  warnings.warn(
+/Users/SSatap/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_sag.py:348: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+  warnings.warn(
+/Users/SSatap/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_sag.py:348: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+  warnings.warn(
+/Users/SSatap/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_sag.py:348: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+  warnings.warn(
+/Users/SSatap/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_sag.py:348: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+  warnings.warn(
+/Users/SSatap/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_sag.py:348: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+  warnings.warn(
+/Users/SSatap/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_sag.py:348: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+  warnings.warn(
+2025-08-24 09:28:15,418 - modeling - INFO - Best logistic regression parameters: {'C': 10, 'max_iter': 200, 'penalty': 'l2', 'solver': 'saga'}
+2025-08-24 09:28:15,418 - modeling - INFO - Training random forest model
+2025-08-24 09:28:23,025 - modeling - INFO - Best random forest parameters: {'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 50}
+2025-08-24 09:28:23,026 - modeling - INFO - Training gradient boosting model
+2025-08-24 09:28:32,344 - modeling - INFO - Best gradient boosting parameters: {'learning_rate': 0.1, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.8}
+2025-08-24 09:28:32,344 - modeling - INFO - Evaluating Logistic Regression model
+2025-08-24 09:28:32,366 - modeling - INFO - Logistic Regression performance:
+2025-08-24 09:28:32,366 - modeling - INFO -   Accuracy: 0.8048
+2025-08-24 09:28:32,366 - modeling - INFO -   Precision: 0.6552
+2025-08-24 09:28:32,367 - modeling - INFO -   Recall: 0.5588
+2025-08-24 09:28:32,367 - modeling - INFO -   F1 Score: 0.6032
+2025-08-24 09:28:32,367 - modeling - INFO -   ROC AUC: 0.8412
+2025-08-24 09:28:32,370 - modeling - INFO - Evaluating Random Forest model
+2025-08-24 09:28:32,410 - modeling - INFO - Random Forest performance:
+2025-08-24 09:28:32,410 - modeling - INFO -   Accuracy: 0.8013
+2025-08-24 09:28:32,410 - modeling - INFO -   Precision: 0.6599
+2025-08-24 09:28:32,410 - modeling - INFO -   Recall: 0.5187
+2025-08-24 09:28:32,410 - modeling - INFO -   F1 Score: 0.5808
+2025-08-24 09:28:32,410 - modeling - INFO -   ROC AUC: 0.8398
+2025-08-24 09:28:32,423 - modeling - INFO - Evaluating Gradient Boosting model
+2025-08-24 09:28:32,446 - modeling - INFO - Gradient Boosting performance:
+2025-08-24 09:28:32,447 - modeling - INFO -   Accuracy: 0.8027
+2025-08-24 09:28:32,447 - modeling - INFO -   Precision: 0.6667
+2025-08-24 09:28:32,447 - modeling - INFO -   Recall: 0.5134
+2025-08-24 09:28:32,447 - modeling - INFO -   F1 Score: 0.5801
+2025-08-24 09:28:32,447 - modeling - INFO -   ROC AUC: 0.8453
+2025-08-24 09:28:32,452 - modeling - INFO - Plotting model performance
+2025-08-24 09:28:33,813 - modeling - INFO - Performance plots saved to data/models/plots
+2025-08-24 09:28:33,813 - modeling - INFO - Saving Logistic Regression model
+2025-08-24 09:28:33,820 - modeling - INFO - Model saved to data/models/logistic_regression_20250824_092833.pkl
+2025-08-24 09:28:33,820 - modeling - INFO - Model metadata saved to data/models/logistic_regression_20250824_092833_metadata.json
+
+2025-08-24 09:28:34,722 - orchestration - INFO - Step model_training completed successfully
+2025-08-24 09:28:34,722 - orchestration - INFO - Step model_training took 29.00 seconds
+2025-08-24 09:28:34,722 - orchestration - INFO - Pipeline Customer Churn Prediction completed successfully
+2025-08-24 09:28:34,723 - orchestration - INFO - Pipeline Customer Churn Prediction took 44.64 seconds

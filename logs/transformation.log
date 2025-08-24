@@ -1,0 +1,34 @@
+2025-08-24 09:16:42,232 - transformation - INFO - Loading cleaned data from data/clean/telco_churn_clean.csv
+2025-08-24 09:16:42,292 - transformation - INFO - Successfully loaded data with 7043 rows and 32 columns
+2025-08-24 09:16:42,292 - transformation - INFO - Creating derived features
+2025-08-24 09:16:42,305 - transformation - INFO - Created 'num_services' feature from 8 service columns
+2025-08-24 09:16:42,307 - transformation - INFO - Created 'customer_value' feature (tenure * MonthlyCharges)
+2025-08-24 09:16:42,308 - transformation - INFO - Created 'avg_monthly_spend' feature (TotalCharges / tenure)
+2025-08-24 09:16:42,309 - transformation - INFO - Created 'service_to_cost_ratio' feature (num_services / MonthlyCharges)
+2025-08-24 09:16:42,310 - transformation - INFO - Created interaction feature 'Contract_One year_x_MonthlyCharges'
+2025-08-24 09:16:42,312 - transformation - INFO - Created interaction feature 'Contract_Two year_x_MonthlyCharges'
+2025-08-24 09:16:42,313 - transformation - INFO - Created 'is_new_customer' flag
+2025-08-24 09:16:42,313 - transformation - INFO - Created 'has_premium_service' flag based on fiber optic service
+2025-08-24 09:16:42,316 - transformation - INFO - Created 'has_security_service' flag from 4 security-related columns
+2025-08-24 09:16:42,316 - transformation - INFO - Created 9 new features
+2025-08-24 09:16:42,316 - transformation - INFO - Creating database connection to data/database/telco_churn.db
+2025-08-24 09:16:42,318 - transformation - INFO - Database connection created successfully
+2025-08-24 09:16:42,318 - transformation - INFO - Storing transformed data in table 'transformed_data'
+2025-08-24 09:16:42,409 - transformation - INFO - Successfully stored 7043 rows and 41 columns in table 'transformed_data'
+2025-08-24 09:28:03,621 - transformation - INFO - Loading cleaned data from data/clean/telco_churn_clean.csv
+2025-08-24 09:28:03,651 - transformation - INFO - Successfully loaded data with 7043 rows and 32 columns
+2025-08-24 09:28:03,651 - transformation - INFO - Creating derived features
+2025-08-24 09:28:03,655 - transformation - INFO - Created 'num_services' feature from 8 service columns
+2025-08-24 09:28:03,656 - transformation - INFO - Created 'customer_value' feature (tenure * MonthlyCharges)
+2025-08-24 09:28:03,657 - transformation - INFO - Created 'avg_monthly_spend' feature (TotalCharges / tenure)
+2025-08-24 09:28:03,657 - transformation - INFO - Created 'service_to_cost_ratio' feature (num_services / MonthlyCharges)
+2025-08-24 09:28:03,658 - transformation - INFO - Created interaction feature 'Contract_One year_x_MonthlyCharges'
+2025-08-24 09:28:03,658 - transformation - INFO - Created interaction feature 'Contract_Two year_x_MonthlyCharges'
+2025-08-24 09:28:03,659 - transformation - INFO - Created 'is_new_customer' flag
+2025-08-24 09:28:03,659 - transformation - INFO - Created 'has_premium_service' flag based on fiber optic service
+2025-08-24 09:28:03,661 - transformation - INFO - Created 'has_security_service' flag from 4 security-related columns
+2025-08-24 09:28:03,661 - transformation - INFO - Created 9 new features
+2025-08-24 09:28:03,661 - transformation - INFO - Creating database connection to data/database/telco_churn.db
+2025-08-24 09:28:03,665 - transformation - INFO - Database connection created successfully
+2025-08-24 09:28:03,665 - transformation - INFO - Storing transformed data in table 'transformed_data'
+2025-08-24 09:28:03,737 - transformation - INFO - Successfully stored 7043 rows and 41 columns in table 'transformed_data'

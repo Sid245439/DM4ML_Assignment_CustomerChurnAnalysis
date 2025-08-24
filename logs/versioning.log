@@ -1,0 +1,22 @@
+2025-08-24 09:21:01,299 - versioning - INFO - No existing registry found, initializing new registry
+2025-08-24 09:21:01,299 - versioning - INFO - Data versioning system initialized with versions directory at data/versions
+2025-08-24 09:21:01,300 - versioning - INFO - Created snapshot of file data/raw/WA_Fn-UseC_-Telco-Customer-Churn.csv with version ID v_20250824_092101
+2025-08-24 09:21:01,300 - versioning - INFO - Saved registry with 1 dataset versions
+2025-08-24 09:21:01,307 - versioning - INFO - Created snapshot of file data/clean/telco_churn_clean.csv with version ID v_20250824_092101
+2025-08-24 09:21:01,308 - versioning - INFO - Saved registry with 2 dataset versions
+2025-08-24 09:21:01,624 - versioning - INFO - Created snapshot of database table transformed_data with version ID v_20250824_092101
+2025-08-24 09:21:01,624 - versioning - INFO - Saved registry with 3 dataset versions
+2025-08-24 09:21:01,630 - versioning - INFO - Loaded version v_20250824_092101 with 100 rows and 5 columns
+2025-08-24 09:21:01,631 - versioning - INFO - Loaded version v_20250824_092101 with 100 rows and 5 columns
+2025-08-24 09:21:01,640 - versioning - INFO - Compared versions v_20250824_092101 and v_20250824_092101
+2025-08-24 09:28:05,279 - versioning - INFO - Loaded registry with 3 dataset versions
+2025-08-24 09:28:05,279 - versioning - INFO - Data versioning system initialized with versions directory at data/versions
+2025-08-24 09:28:05,281 - versioning - INFO - Created snapshot of file data/raw/WA_Fn-UseC_-Telco-Customer-Churn.csv with version ID v_20250824_092805
+2025-08-24 09:28:05,282 - versioning - INFO - Saved registry with 4 dataset versions
+2025-08-24 09:28:05,287 - versioning - INFO - Created snapshot of file data/clean/telco_churn_clean.csv with version ID v_20250824_092805
+2025-08-24 09:28:05,288 - versioning - INFO - Saved registry with 5 dataset versions
+2025-08-24 09:28:05,650 - versioning - INFO - Created snapshot of database table transformed_data with version ID v_20250824_092805
+2025-08-24 09:28:05,651 - versioning - INFO - Saved registry with 6 dataset versions
+2025-08-24 09:28:05,655 - versioning - INFO - Loaded version v_20250824_092101 with 100 rows and 5 columns
+2025-08-24 09:28:05,657 - versioning - INFO - Loaded version v_20250824_092805 with 100 rows and 5 columns
+2025-08-24 09:28:05,665 - versioning - INFO - Compared versions v_20250824_092101 and v_20250824_092805

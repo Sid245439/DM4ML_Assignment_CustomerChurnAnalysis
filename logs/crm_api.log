@@ -1,0 +1,288 @@
+2025-08-23 20:53:19,219 - __main__ - INFO - 🔎 Kaggle download started – learnplatform/telco-customer-churn
+2025-08-23 20:53:19,361 - __main__ - ERROR - Kaggle API error
+Traceback (most recent call last):
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py", line 381, in _make_request
+    self._validate_conn(conn)
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py", line 978, in _validate_conn
+    conn.connect()
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/urllib3/connection.py", line 362, in connect
+    self.sock = ssl_wrap_socket(
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/urllib3/util/ssl_.py", line 384, in ssl_wrap_socket
+    return context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/usr/local/Cellar/python@3.9/3.9.18/Frameworks/Python.framework/Versions/3.9/lib/python3.9/ssl.py", line 501, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/usr/local/Cellar/python@3.9/3.9.18/Frameworks/Python.framework/Versions/3.9/lib/python3.9/ssl.py", line 1074, in _create
+    self.do_handshake()
+  File "/usr/local/Cellar/python@3.9/3.9.18/Frameworks/Python.framework/Versions/3.9/lib/python3.9/ssl.py", line 1343, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1129)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py", line 726, in urlopen
+    retries = retries.increment(
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/urllib3/util/retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='www.kaggle.com', port=443): Max retries exceeded with url: /api/v1/datasets/download/learnplatform/telco-customer-churn?raw=false (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1129)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/SSatap/Documents/Personal/MTECH/Semester 2/DMML/Assignment/DM4ML_Assignment_CustomerChurnAnalysis/src/ingestion/crm_api.py", line 92, in download_kaggle
+    zip_path = kaggle_api.dataset_download_files(
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/kaggle/api/kaggle_api_extended.py", line 1664, in dataset_download_files
+    response = kaggle.datasets.dataset_api_client.download_dataset(request)
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/kagglesdk/datasets/services/dataset_api_service.py", line 80, in download_dataset
+    return self._client.call("datasets.DatasetApiService", "ApiDownloadDataset", request, HttpRedirect)
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/kagglesdk/kaggle_http_client.py", line 124, in call
+    http_response = self._session.send(http_request, **settings)
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/requests/adapters.py", line 675, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='www.kaggle.com', port=443): Max retries exceeded with url: /api/v1/datasets/download/learnplatform/telco-customer-churn?raw=false (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1129)')))
+2025-08-23 20:53:19,369 - __main__ - ERROR - Unexpected error
+Traceback (most recent call last):
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py", line 381, in _make_request
+    self._validate_conn(conn)
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py", line 978, in _validate_conn
+    conn.connect()
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/urllib3/connection.py", line 362, in connect
+    self.sock = ssl_wrap_socket(
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/urllib3/util/ssl_.py", line 384, in ssl_wrap_socket
+    return context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/usr/local/Cellar/python@3.9/3.9.18/Frameworks/Python.framework/Versions/3.9/lib/python3.9/ssl.py", line 501, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/usr/local/Cellar/python@3.9/3.9.18/Frameworks/Python.framework/Versions/3.9/lib/python3.9/ssl.py", line 1074, in _create
+    self.do_handshake()
+  File "/usr/local/Cellar/python@3.9/3.9.18/Frameworks/Python.framework/Versions/3.9/lib/python3.9/ssl.py", line 1343, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1129)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py", line 726, in urlopen
+    retries = retries.increment(
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/urllib3/util/retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='www.kaggle.com', port=443): Max retries exceeded with url: /api/v1/datasets/download/learnplatform/telco-customer-churn?raw=false (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1129)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/SSatap/Documents/Personal/MTECH/Semester 2/DMML/Assignment/DM4ML_Assignment_CustomerChurnAnalysis/src/ingestion/crm_api.py", line 92, in download_kaggle
+    zip_path = kaggle_api.dataset_download_files(
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/kaggle/api/kaggle_api_extended.py", line 1664, in dataset_download_files
+    response = kaggle.datasets.dataset_api_client.download_dataset(request)
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/kagglesdk/datasets/services/dataset_api_service.py", line 80, in download_dataset
+    return self._client.call("datasets.DatasetApiService", "ApiDownloadDataset", request, HttpRedirect)
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/kagglesdk/kaggle_http_client.py", line 124, in call
+    http_response = self._session.send(http_request, **settings)
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/requests/adapters.py", line 675, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='www.kaggle.com', port=443): Max retries exceeded with url: /api/v1/datasets/download/learnplatform/telco-customer-churn?raw=false (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1129)')))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/SSatap/Documents/Personal/MTECH/Semester 2/DMML/Assignment/DM4ML_Assignment_CustomerChurnAnalysis/src/ingestion/crm_api.py", line 230, in <module>
+    main()
+  File "/Users/SSatap/Documents/Personal/MTECH/Semester 2/DMML/Assignment/DM4ML_Assignment_CustomerChurnAnalysis/src/ingestion/crm_api.py", line 206, in main
+    kaggle_entries = download_kaggle(kaggle_slug, kaggle_dir, unzip=True)
+  File "/Users/SSatap/Documents/Personal/MTECH/Semester 2/DMML/Assignment/DM4ML_Assignment_CustomerChurnAnalysis/src/ingestion/crm_api.py", line 100, in download_kaggle
+    raise RuntimeError(f"Kaggle download failed: {exc}") from exc
+RuntimeError: Kaggle download failed: HTTPSConnectionPool(host='www.kaggle.com', port=443): Max retries exceeded with url: /api/v1/datasets/download/learnplatform/telco-customer-churn?raw=false (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1129)')))
+2025-08-23 20:53:53,672 - __main__ - INFO - 🔎 Hugging‑Face download – aai510-group1/telco-customer-churn (train)
+2025-08-23 20:53:53,810 - __main__ - ERROR - HF download error
+Traceback (most recent call last):
+  File "/Users/SSatap/Documents/Personal/MTECH/Semester 2/DMML/Assignment/DM4ML_Assignment_CustomerChurnAnalysis/src/ingestion/crm_api.py", line 154, in download_hf
+    hf_ds = load_dataset(repo, split=split)
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/datasets/load.py", line 1392, in load_dataset
+    builder_instance = load_dataset_builder(
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/datasets/load.py", line 1132, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/datasets/load.py", line 1031, in dataset_module_factory
+    raise e1 from None
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/datasets/load.py", line 967, in dataset_module_factory
+    raise ConnectionError(f"Couldn't reach '{path}' on the Hub ({e.__class__.__name__})") from e
+ConnectionError: Couldn't reach 'aai510-group1/telco-customer-churn' on the Hub (SSLError)
+2025-08-23 20:53:53,811 - __main__ - ERROR - Unexpected error
+Traceback (most recent call last):
+  File "/Users/SSatap/Documents/Personal/MTECH/Semester 2/DMML/Assignment/DM4ML_Assignment_CustomerChurnAnalysis/src/ingestion/crm_api.py", line 154, in download_hf
+    hf_ds = load_dataset(repo, split=split)
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/datasets/load.py", line 1392, in load_dataset
+    builder_instance = load_dataset_builder(
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/datasets/load.py", line 1132, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/datasets/load.py", line 1031, in dataset_module_factory
+    raise e1 from None
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/datasets/load.py", line 967, in dataset_module_factory
+    raise ConnectionError(f"Couldn't reach '{path}' on the Hub ({e.__class__.__name__})") from e
+ConnectionError: Couldn't reach 'aai510-group1/telco-customer-churn' on the Hub (SSLError)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/SSatap/Documents/Personal/MTECH/Semester 2/DMML/Assignment/DM4ML_Assignment_CustomerChurnAnalysis/src/ingestion/crm_api.py", line 230, in <module>
+    main()
+  File "/Users/SSatap/Documents/Personal/MTECH/Semester 2/DMML/Assignment/DM4ML_Assignment_CustomerChurnAnalysis/src/ingestion/crm_api.py", line 215, in main
+    hf_entries = download_hf(hf_repo, split="train", dst=hf_dir, parquet=True)
+  File "/Users/SSatap/Documents/Personal/MTECH/Semester 2/DMML/Assignment/DM4ML_Assignment_CustomerChurnAnalysis/src/ingestion/crm_api.py", line 157, in download_hf
+    raise RuntimeError(f"Hugging‑Face download failed: {exc}") from exc
+RuntimeError: Hugging‑Face download failed: Couldn't reach 'aai510-group1/telco-customer-churn' on the Hub (SSLError)
+2025-08-23 20:55:20,363 - __main__ - INFO - 🔎 Kaggle download started – learnplatform/telco-customer-churn
+2025-08-23 20:55:20,454 - __main__ - ERROR - Kaggle API error
+Traceback (most recent call last):
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py", line 381, in _make_request
+    self._validate_conn(conn)
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py", line 978, in _validate_conn
+    conn.connect()
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/urllib3/connection.py", line 362, in connect
+    self.sock = ssl_wrap_socket(
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/urllib3/util/ssl_.py", line 384, in ssl_wrap_socket
+    return context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/usr/local/Cellar/python@3.9/3.9.18/Frameworks/Python.framework/Versions/3.9/lib/python3.9/ssl.py", line 501, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/usr/local/Cellar/python@3.9/3.9.18/Frameworks/Python.framework/Versions/3.9/lib/python3.9/ssl.py", line 1074, in _create
+    self.do_handshake()
+  File "/usr/local/Cellar/python@3.9/3.9.18/Frameworks/Python.framework/Versions/3.9/lib/python3.9/ssl.py", line 1343, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1129)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py", line 726, in urlopen
+    retries = retries.increment(
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/urllib3/util/retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='www.kaggle.com', port=443): Max retries exceeded with url: /api/v1/datasets/download/learnplatform/telco-customer-churn?raw=false (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1129)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/SSatap/Documents/Personal/MTECH/Semester 2/DMML/Assignment/DM4ML_Assignment_CustomerChurnAnalysis/src/ingestion/crm_api.py", line 92, in download_kaggle
+    zip_path = kaggle_api.dataset_download_files(
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/kaggle/api/kaggle_api_extended.py", line 1664, in dataset_download_files
+    response = kaggle.datasets.dataset_api_client.download_dataset(request)
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/kagglesdk/datasets/services/dataset_api_service.py", line 80, in download_dataset
+    return self._client.call("datasets.DatasetApiService", "ApiDownloadDataset", request, HttpRedirect)
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/kagglesdk/kaggle_http_client.py", line 124, in call
+    http_response = self._session.send(http_request, **settings)
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/requests/adapters.py", line 675, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='www.kaggle.com', port=443): Max retries exceeded with url: /api/v1/datasets/download/learnplatform/telco-customer-churn?raw=false (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1129)')))
+2025-08-23 20:55:20,465 - __main__ - ERROR - Unexpected error
+Traceback (most recent call last):
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py", line 381, in _make_request
+    self._validate_conn(conn)
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py", line 978, in _validate_conn
+    conn.connect()
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/urllib3/connection.py", line 362, in connect
+    self.sock = ssl_wrap_socket(
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/urllib3/util/ssl_.py", line 384, in ssl_wrap_socket
+    return context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/usr/local/Cellar/python@3.9/3.9.18/Frameworks/Python.framework/Versions/3.9/lib/python3.9/ssl.py", line 501, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/usr/local/Cellar/python@3.9/3.9.18/Frameworks/Python.framework/Versions/3.9/lib/python3.9/ssl.py", line 1074, in _create
+    self.do_handshake()
+  File "/usr/local/Cellar/python@3.9/3.9.18/Frameworks/Python.framework/Versions/3.9/lib/python3.9/ssl.py", line 1343, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1129)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py", line 726, in urlopen
+    retries = retries.increment(
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/urllib3/util/retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='www.kaggle.com', port=443): Max retries exceeded with url: /api/v1/datasets/download/learnplatform/telco-customer-churn?raw=false (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1129)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/SSatap/Documents/Personal/MTECH/Semester 2/DMML/Assignment/DM4ML_Assignment_CustomerChurnAnalysis/src/ingestion/crm_api.py", line 92, in download_kaggle
+    zip_path = kaggle_api.dataset_download_files(
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/kaggle/api/kaggle_api_extended.py", line 1664, in dataset_download_files
+    response = kaggle.datasets.dataset_api_client.download_dataset(request)
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/kagglesdk/datasets/services/dataset_api_service.py", line 80, in download_dataset
+    return self._client.call("datasets.DatasetApiService", "ApiDownloadDataset", request, HttpRedirect)
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/kagglesdk/kaggle_http_client.py", line 124, in call
+    http_response = self._session.send(http_request, **settings)
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/requests/adapters.py", line 675, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='www.kaggle.com', port=443): Max retries exceeded with url: /api/v1/datasets/download/learnplatform/telco-customer-churn?raw=false (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1129)')))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/SSatap/Documents/Personal/MTECH/Semester 2/DMML/Assignment/DM4ML_Assignment_CustomerChurnAnalysis/src/ingestion/crm_api.py", line 230, in <module>
+    main()
+  File "/Users/SSatap/Documents/Personal/MTECH/Semester 2/DMML/Assignment/DM4ML_Assignment_CustomerChurnAnalysis/src/ingestion/crm_api.py", line 206, in main
+    kaggle_entries = download_kaggle(kaggle_slug, kaggle_dir, unzip=True)
+  File "/Users/SSatap/Documents/Personal/MTECH/Semester 2/DMML/Assignment/DM4ML_Assignment_CustomerChurnAnalysis/src/ingestion/crm_api.py", line 100, in download_kaggle
+    raise RuntimeError(f"Kaggle download failed: {exc}") from exc
+RuntimeError: Kaggle download failed: HTTPSConnectionPool(host='www.kaggle.com', port=443): Max retries exceeded with url: /api/v1/datasets/download/learnplatform/telco-customer-churn?raw=false (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1129)')))
+2025-08-23 20:57:57,386 - __main__ - INFO - 🔎 Hugging‑Face download – aai510-group1/telco-customer-churn (train)
+2025-08-23 20:57:57,525 - __main__ - ERROR - HF download error
+Traceback (most recent call last):
+  File "/Users/SSatap/Documents/Personal/MTECH/Semester 2/DMML/Assignment/DM4ML_Assignment_CustomerChurnAnalysis/src/ingestion/crm_api.py", line 154, in download_hf
+    hf_ds = load_dataset(repo, split=split)
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/datasets/load.py", line 1392, in load_dataset
+    builder_instance = load_dataset_builder(
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/datasets/load.py", line 1132, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/datasets/load.py", line 1031, in dataset_module_factory
+    raise e1 from None
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/datasets/load.py", line 967, in dataset_module_factory
+    raise ConnectionError(f"Couldn't reach '{path}' on the Hub ({e.__class__.__name__})") from e
+ConnectionError: Couldn't reach 'aai510-group1/telco-customer-churn' on the Hub (SSLError)
+2025-08-23 20:57:57,527 - __main__ - ERROR - Unexpected error
+Traceback (most recent call last):
+  File "/Users/SSatap/Documents/Personal/MTECH/Semester 2/DMML/Assignment/DM4ML_Assignment_CustomerChurnAnalysis/src/ingestion/crm_api.py", line 154, in download_hf
+    hf_ds = load_dataset(repo, split=split)
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/datasets/load.py", line 1392, in load_dataset
+    builder_instance = load_dataset_builder(
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/datasets/load.py", line 1132, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/datasets/load.py", line 1031, in dataset_module_factory
+    raise e1 from None
+  File "/Users/SSatap/Library/Python/3.9/lib/python/site-packages/datasets/load.py", line 967, in dataset_module_factory
+    raise ConnectionError(f"Couldn't reach '{path}' on the Hub ({e.__class__.__name__})") from e
+ConnectionError: Couldn't reach 'aai510-group1/telco-customer-churn' on the Hub (SSLError)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/SSatap/Documents/Personal/MTECH/Semester 2/DMML/Assignment/DM4ML_Assignment_CustomerChurnAnalysis/src/ingestion/crm_api.py", line 230, in <module>
+    main()
+  File "/Users/SSatap/Documents/Personal/MTECH/Semester 2/DMML/Assignment/DM4ML_Assignment_CustomerChurnAnalysis/src/ingestion/crm_api.py", line 215, in main
+    hf_entries = download_hf(hf_repo, split="train", dst=hf_dir, parquet=True)
+  File "/Users/SSatap/Documents/Personal/MTECH/Semester 2/DMML/Assignment/DM4ML_Assignment_CustomerChurnAnalysis/src/ingestion/crm_api.py", line 157, in download_hf
+    raise RuntimeError(f"Hugging‑Face download failed: {exc}") from exc
+RuntimeError: Hugging‑Face download failed: Couldn't reach 'aai510-group1/telco-customer-churn' on the Hub (SSLError)
